@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smsbao", "smsbao\smsbao.csproj", "{AC7BCA7B-219F-49D4-83A3-94F45A194C4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{705A786F-8857-42F7-A3CC-E3DF06863327}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smsbao.test", "..\smsbao.test\smsbao.test.csproj", "{EA91DB6F-AC03-41B5-9E88-0AA5D1DED0C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC7BCA7B-219F-49D4-83A3-94F45A194C4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC7BCA7B-219F-49D4-83A3-94F45A194C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC7BCA7B-219F-49D4-83A3-94F45A194C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7BCA7B-219F-49D4-83A3-94F45A194C4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA91DB6F-AC03-41B5-9E88-0AA5D1DED0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA91DB6F-AC03-41B5-9E88-0AA5D1DED0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA91DB6F-AC03-41B5-9E88-0AA5D1DED0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA91DB6F-AC03-41B5-9E88-0AA5D1DED0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
