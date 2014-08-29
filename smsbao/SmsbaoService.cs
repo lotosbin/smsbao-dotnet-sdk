@@ -18,8 +18,10 @@ namespace smsbao
     /// 51：手机号码不正确
     /// </summary>
     /// 
-    public class SmsBaoService
+    public class SmsBaoClient
     {
+        #region send sms
+
         public SendResult SendSms(string mobile, string content)
         {
             var username = Config.GetUserName();
@@ -52,6 +54,11 @@ namespace smsbao
                 Message = get,
             };
         }
+
+        #endregion
+
+        #region New region
+
         public class QueryResult
         {
             /// <summary>
@@ -73,12 +80,31 @@ PASSWORD：平台登录密码MD5后的值
          */
         public QueryResult Query(string username, string password)
         {
-            throw new NotImplementedException();
+            var url = "http://www.smsbao.com/query?u=USERNAME&p=PASSWORD";
+            var request = new SyncHttpRequest();
+            var get = request.HttpGet(url, new List<APIParameter>()
+            {
+                new APIParameter("u",username),
+                new APIParameter("p",Util.MD5Encoding(password)),
+            });
+            if (get[0] == '0')
+            {
+                var split = get.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+                var strings = split[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                return new QueryResult()
+                {
+                    SendCount = Convert.ToInt32(strings[0]),
+                    RemainCount = Convert.ToInt32(strings[1]),
+                };
+            }
+            throw new Exception(get);
         }
 
         public QueryResult Query()
         {
             return Query(Config.GetUserName(), Config.GetPassword());
         }
+
+        #endregion
     }
 }
